@@ -290,6 +290,13 @@ body {
     display: block;
     /* Seção visível */
 }
+.form-transacao{
+   display: block;
+ justify-content: center; 
+ height: 700px;  
+    width: 800px;
+}
+
 
 .main-footer {
     background-color: #1E1E1E;
