@@ -33,7 +33,7 @@
           </button>
         </li>
         <li>
-          <button class="nav-button" data-target="customers">
+          <button class="nav-button" data-target="reservations">
             <strong>Reservas</strong>
           </button>
         </li>
@@ -106,24 +106,6 @@
           </div>
           <div class="reservas-atual">
             <h1 class="texto-box">Reservas</h1>
-            <div class="in-reservas">
-              <p class="texto-box"><strong>Cliente:</strong> Carlos da Silva</p>
-              <p class="texto-box"><strong>Mesa Pedida:</strong> Mesa 8</p>
-              <p class="texto-box"><strong>Horário:</strong> 19h00</p>
-              <p class="texto-box"><strong>Quantidade de Pessoas:</strong> 4</p>
-            </div>
-            <div class="in-reservas">
-              <p class="texto-box"><strong>Cliente:</strong> Ana Souza</p>
-              <p class="texto-box"><strong>Mesa Pedida:</strong> Mesa 6</p>
-              <p class="texto-box"><strong>Horário:</strong> 20h00</p>
-              <p class="texto-box"><strong>Quantidade de Pessoas:</strong> 2</p>
-            </div>
-            <div class="in-reservas">
-              <p class="texto-box"><strong>Cliente:</strong> Roberto Pereira</p>
-              <p class="texto-box"><strong>Mesa Pedida:</strong> Mesa 14</p>
-              <p class="texto-box"><strong>Horário:</strong> 21h00</p>
-              <p class="texto-box"><strong>Quantidade de Pessoas:</strong> 6</p>
-            </div>
           </div>
           <div class="pedidos-atual">
             <h1 class="texto-box">Pedidos</h1>
@@ -202,15 +184,29 @@
           </table>
         </section>
       </section>
-
+   
       <section id="orders" class="content-section hidden">
         <h2>Pedidos</h2>
         <p>Conteúdo da seção Pedidos...</p>
       </section>
 
-      <section id="customers" class="content-section hidden">
-        <h2>Reservas</h2>
-        <p>Conteúdo da seção Clientes...</p>
+      <section id="reservations" class="content-section hidden">
+        <div class="formulario-reserva">
+          <form id="reserva-form">
+            <label for="cliente">Cliente</label>
+            <input type="text" id="cliente" name="cliente" required>
+            <label for="mesa">Mesa:</label>
+            <input type="text" id="mesa" required name="mesa" required>
+            <label for="horario">Horário:</label>
+            <input type="datetime-local" id="horario" required>
+            <label for="quantidade">Qtd:</label>
+            <input type="number" id="quantidade" required>
+          </form>
+          <button type="submit" id="botao-adicionar">Adicionar Reserva</button>
+        </div>
+        <div class="div-reservas">
+
+        </div>
       </section>
 
       <section id="stock" class="content-section hidden">
@@ -270,6 +266,7 @@
       </div>
     </footer>
 
+    <script src="crud.js"></script>
     <script src="scripts.js"></script>
     <!-- Link para o JavaScript -->
   </body>
