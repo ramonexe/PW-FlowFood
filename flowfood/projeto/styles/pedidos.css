@@ -145,62 +145,6 @@ body {
   background-color: #e5940e;
 }
 
-.receita-atual {
-  flex: 1 1 43%;
-  margin: 10px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background: #c8c8c8;
-}
-
-.in-receita-atual {
-  margin: 10px;
-  min-height: 85px;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
-.quantia-receita-atual {
-  font-size: 65px;
-  font-weight: bold;
-  margin: 10px;
-  color: #000000;
-}
-.label-reserva-input {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px;
-  color: #000000;
-}
-
-.estoque-atual {
-  flex: 1 1 53%;
-  margin: 10px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background: #c8c8c8;
-}
-
-.flexbox-estoque {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: auto;
-  justify-content: 10px;
-  padding: 10px;
-}
-
-.in-estoque-atual {
-  flex: 1 1 45%;
-  flex-wrap: wrap;
-  margin: 5px;
-  width: 100%;
-  min-height: 80px;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
 .pedidos-atual {
   flex: 1 1 50%;
   flex-wrap: wrap;
@@ -226,36 +170,21 @@ body {
   background: #a8a8a8;
 }
 
-.reservas-atual {
-  flex: 1 1 40%;
-  margin: 10px;
-  overflow: auto;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background: #c8c8c8;
+.status {
+  margin-left: 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
-.in-reservas-atual {
-  margin: 10px;
-  overflow: auto;
-  height: auto;
-  border-radius: 10px;
-  background: #a8a8a8;
+.status-preparo {
+  background-color: yellow;
 }
-.in-nova-reserva {
-  margin: 10px;
-  min-height: 190px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-.nova-reserva {
-  margin: 10px;
-  min-height: 85px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #a8a8a8;
+
+.status-pronto {
+  background-color: green;
 }
 
 .texto-box {
@@ -269,47 +198,6 @@ body {
   margin: 10px;
   color: #000000;
 }
-
-.estoque {
-  text-align: center;
-  margin: 10px;
-  overflow: auto;
-  min-width: 100%;
-  min-height: 750px;
-  border-radius: 10px;
-  background: #c8c8c8;
-}
-
-.flexbox-tabela {
-  flex-direction: column;
-  display: flex;
-  justify-content: 10px;
-  padding: 10px;
-  background-color: #e5940e;
-}
-
-.table-estoque {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-estoque th,
-.table-estoque td {
-  padding: 10px;
-  border: 1px solid #000000;
-  text-align: center;
-}
-
-.table-estoque th {
-  background-color: #8d8d8d;
-  color: white;
-}
-
-.table-estoque td {
-  background-color: white;
-  color: black;
-}
-
 .button-action {
   margin: 10px;
   padding: 5px 10px;
@@ -323,18 +211,6 @@ body {
 
 .button-action:hover {
   background-color: #e5940e;
-}
-
-.item-form {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.in-estoque {
-  margin: 10px;
-  min-height: 60px;
-  border-radius: 10px;
-  background: #a8a8a8;
 }
 
 .content-section {
@@ -353,7 +229,6 @@ body {
   flex-direction: row;
   display: flex;
   padding: 20px;
-  opacity: 80%;
 }
 
 .footer-content-left {
