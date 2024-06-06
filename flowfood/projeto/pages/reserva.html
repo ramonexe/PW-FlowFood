@@ -2,172 +2,169 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/flowfood/projeto/imagens/flow-food-favicon.ico" />
-    <link rel="stylesheet" href="/flowfood/projeto/styles/reserva.css">
-    <title>Flow Food</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/flowfood/projeto/imagens/flow-food-favicon.ico" />
+  <link rel="stylesheet" href="/flowfood/projeto/styles/reserva.css">
+  <title>Flow Food</title>
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="logo">
-          <img src="/flowfood/projeto/imagens/flow-food-logo100.png" alt="Logo FlowFood" />
-          <button class="menu-toggle">Menu</button>
-          <nav class="mobile-menu">
-            <button class="close-menu">Fechar</button>
-            <ul>
-              <li><a href="index.html">
-                <button class="nav-button active" data-target="home">
-                  <strong>Início</strong>
-                </button></a>
-              </li>
-              <li>
-                <button class="nav-button" data-target="finance">
-                  <strong>Financeiro</strong>
-                </button>
-              </li>
-              <li>
-                <button class="nav-button" data-target="orders">
-                  <strong>Pedidos</strong>
-                </button>
-              </li>
-              <li>
-                <button class="nav-button" data-target="customers">
-                  <strong>Reservas</strong>
-                </button>
-              </li>
-              <li>
-                <button class="nav-button" data-target="stock">
-                  <strong>Estoque</strong>
-                </button>
-              </li>
-              <li>
-                <button class="nav-button" data-target="reports">
-                  <strong>Relatórios</strong>
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-    <nav class="sidebar">
+  <header class="main-header">
+    <div class="logo">
+      <img src="/flowfood/projeto/imagens/flow-food-logo100.png" alt="Logo FlowFood" />
+      <button class="menu-toggle">Menu</button>
+      <nav class="mobile-menu">
+        <button class="close-menu">Fechar</button>
         <ul>
-            <li><a href="index.html"><button class="nav-button active"><strong>Início</strong></button></a></li>
-            <li><button class="nav-button" data-target="finance"><strong>Financeiro</strong></button></li>
-            <li><button class="nav-button" data-target="orders"><strong>Pedidos</strong></button></li>
-            <li><button class="nav-button" data-target="customers"><strong>Reservas</strong></button></li>
-            <li><button class="nav-button" data-target="stock"><strong>Estoque</strong></button></li>
-            <li><button class="nav-button" data-target="reports"><strong>Relatórios</strong></button></li>
+          <li><a href="index.html">
+              <button class="nav-button active" data-target="home">
+                <strong>Início</strong>
+              </button></a>
+          </li>
+          <li>
+            <button class="nav-button" data-target="finance">
+              <strong>Financeiro</strong>
+            </button>
+          </li>
+          <li>
+            <button class="nav-button" data-target="orders">
+              <strong>Pedidos</strong>
+            </button>
+          </li>
+          <li>
+            <button class="nav-button" data-target="customers">
+              <strong>Reservas</strong>
+            </button>
+          </li>
+          <li>
+            <button class="nav-button" data-target="stock">
+              <strong>Estoque</strong>
+            </button>
+          </li>
+          <li>
+            <button class="nav-button" data-target="reports">
+              <strong>Relatórios</strong>
+            </button>
+          </li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <main class="main-content">
-        <section id="reserva-content" class="reserva-section visible">
-            <div class="flexbox-reserva">
-                <div class="reservas-atual">
-                    <h1 class="texto-box">Nova Reserva</h1>
-                    <div class="in-nova-reserva">
-                        <form action="post" id="reserva-form">
-                      <label for="input-reserva" class="label-reserva-input">Cliente:</label>
-                      <input name="cliente" type="text" class="label-reserva-input" id="input-cliente"></input><br>
-                      <label for="input-mesa" class="label-reserva-input">Mesa:</label>
-                      <input name="mesa" type="number" class="label-reserva-input" id="input-mesa"></input><br>
-                      <label for="=input-qtd" class="label-reserva-input">Qtd pessoas:</label>
-                      <input name="quantidade" type="number" class="label-reserva-input" id="input-qtd"></input><br>
-                      <label  for="input-horario" class="label-reserva-input">Horário:</label>
-                      <input name="data" type="datetime-local" class="label-reserva-input" id="input-horario"></input><br>
-                        <button id="botao-adicionar" type="button">Reservar</button>
-                </form> 
-                    </div>
-                    </div>
-                <div class="estoque-atual">
-                    <h1 class="texto-box">Reservas em Andamento</h1>
-                    <div class="flexbox-reserva">
-                        
-                        
-                        <div class="in-estoque-atual">
-                            <p class="texto-box"><strong>Item:</strong> Molho de Tomate</p>
-                            <p class="texto-box"><strong>Quantidade Restante:</strong> 2 latas</p>
-                            <p class="texto-box"><strong>Nível Crítico:</strong> Menos de 3 latas</p>
-                        </div>
-                        <div class="in-estoque-atual">
-                            <p class="texto-box"><strong>Item:</strong> Queijo Parmesão</p>
-                            <p class="texto-box"><strong>Quantidade Restante:</strong> 500 g</p>
-                            <p class="texto-box"><strong>Nível Crítico:</strong> Menos de 400 g</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="div-reservas">
-                    <h1 class="texto-box">Reservas Agendadas</h1>
-                    
-                </div>
-                <div class="div-reservas">
-                    <h1 class="texto-box">Reservas Concluídas</h1>
-                    
-                </div>
-                <div class="pedidos-atual">
-                    <h1 class="texto-box">Reservas Canceladas </h1>
-                    <div class="in-pedidos">
-                        <p class="titulo-box"><img class="icon-food"
-                                src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
-                                alt="Logo FlowFood"><strong>Feijoada</strong></p>
-                        <p class="texto-box"><strong>Valor:</strong> R$ 35,00</p>
-                        <p class="texto-box"><strong>Quantidade:</strong> 2</p>
-                        <p class="texto-box"><strong>Mesa:</strong> 12</p>
-                        <p class="texto-box"><strong>Descrição:</strong> Feijão preto, carne seca, linguiça, arroz,
-                            farofa.</p>
-                    </div>
-                    <div class="in-pedidos">
-                        <p class="titulo-box"><img class="icon-food"
-                                src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
-                                alt="Logo FlowFood"><strong>Picanha</strong></p>
-                        <p class="texto-box"><strong>Valor:</strong> R$ 70,00</p>
-                        <p class="texto-box"><strong>Quantidade:</strong> 1</p>
-                        <p class="texto-box"><strong>Mesa:</strong> 15</p>
-                        <p class="texto-box"><strong>Descrição:</strong> Picanha grelhada com batatas fritas, molho
-                            chimichurri.</p>
-                    </div>
-                    <div class="in-pedidos">
-                        <p class="titulo-box"><img class="icon-food"
-                                src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
-                                alt="Logo FlowFood"><strong>Spaghetti</strong></p>
-                        <p class="texto-box"><strong>Valor:</strong> R$ 45,00</p>
-                        <p class="texto-box"><strong>Quantidade:</strong> 3</p>
-                        <p class="texto-box"><strong>Mesa:</strong> 5</p>
-                        <p class="texto-box"><strong>Descrição:</strong> Spaghetti com bacon, ovos, queijo parmesão
-                            e creme de leite.
-                        </p>
-                    </div>
-                </div>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html"><button class="nav-button active"><strong>Início</strong></button></a></li>
+      <li><button class="nav-button" data-target="finance"><strong>Financeiro</strong></button></li>
+      <li><button class="nav-button" data-target="orders"><strong>Pedidos</strong></button></li>
+      <li><button class="nav-button" data-target="customers"><strong>Reservas</strong></button></li>
+      <li><button class="nav-button" data-target="stock"><strong>Estoque</strong></button></li>
+      <li><button class="nav-button" data-target="reports"><strong>Relatórios</strong></button></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <section id="reserva-content" class="reserva-section visible">
+      <div class="flexbox-reserva">
+        <div class="reservas-atual">
+          <h1 class="texto-box">Nova Reserva</h1>
+          <div class="in-nova-reserva">
+            <form action="post" id="reserva-form">
+              <label for="input-reserva" class="label-reserva-input">Cliente:</label>
+              <input name="cliente" type="text" class="label-reserva-input" id="input-cliente"></input><br>
+              <label for="input-mesa" class="label-reserva-input">Mesa:</label>
+              <input name="mesa" type="number" class="label-reserva-input" id="input-mesa"></input><br>
+              <label for="=input-qtd" class="label-reserva-input">Qtd pessoas:</label>
+              <input name="quantidade" type="number" class="label-reserva-input" id="input-qtd"></input><br>
+              <label for="input-horario" class="label-reserva-input">Horário:</label>
+              <input name="data" type="datetime-local" class="label-reserva-input" id="input-horario"></input><br>
+              <button id="botao-adicionar" type="button">Reservar</button>
+            </form>
+          </div>
+        </div>
+        <div class="estoque-atual">
+          <h1 class="texto-box">Reservas em Andamento</h1>
+          <div class="flexbox-reserva">
+
+
+            <div class="in-estoque-atual">
+              <p class="texto-box"><strong>Item:</strong> Molho de Tomate</p>
+              <p class="texto-box"><strong>Quantidade Restante:</strong> 2 latas</p>
+              <p class="texto-box"><strong>Nível Crítico:</strong> Menos de 3 latas</p>
             </div>
-        </section>
-
-        
-
-       
-
-        
-
-        
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content-left">
-            <h1>Flow Food</h1>
-            <p>Gestão de restaurantes</p>
+            <div class="in-estoque-atual">
+              <p class="texto-box"><strong>Item:</strong> Queijo Parmesão</p>
+              <p class="texto-box"><strong>Quantidade Restante:</strong> 500 g</p>
+              <p class="texto-box"><strong>Nível Crítico:</strong> Menos de 400 g</p>
+            </div>
+          </div>
         </div>
-        <div class="footer-content-center">
-            <img src="/flowfood/projeto/imagens/flow-food-logo100.png" alt="FlowFood Logo Pequeno" class="footer-logo">
-        </div>
-        <div class="footer-content-right">
-            <p>Todos os direitos reservados ©</p>
-        </div>
-    </footer>
+        <div class="div-reservas">
+          <h1 class="texto-box">Reservas Agendadas</h1>
 
-    <!-- Link para o JavaScript -->
-    <script src="/flowfood/projeto/js/crud.js"></script>
+        </div>
+        <div class="div-reservas">
+          <h1 class="texto-box">Reservas Concluídas</h1>
+
+        </div>
+        <div class="pedidos-atual">
+          <h1 class="texto-box">Reservas Canceladas </h1>
+          <div class="in-pedidos">
+            <p class="titulo-box"><img class="icon-food" src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
+                alt="Logo FlowFood"><strong>Feijoada</strong></p>
+            <p class="texto-box"><strong>Valor:</strong> R$ 35,00</p>
+            <p class="texto-box"><strong>Quantidade:</strong> 2</p>
+            <p class="texto-box"><strong>Mesa:</strong> 12</p>
+            <p class="texto-box"><strong>Descrição:</strong> Feijão preto, carne seca, linguiça, arroz,
+              farofa.</p>
+          </div>
+          <div class="in-pedidos">
+            <p class="titulo-box"><img class="icon-food" src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
+                alt="Logo FlowFood"><strong>Picanha</strong></p>
+            <p class="texto-box"><strong>Valor:</strong> R$ 70,00</p>
+            <p class="texto-box"><strong>Quantidade:</strong> 1</p>
+            <p class="texto-box"><strong>Mesa:</strong> 15</p>
+            <p class="texto-box"><strong>Descrição:</strong> Picanha grelhada com batatas fritas, molho
+              chimichurri.</p>
+          </div>
+          <div class="in-pedidos">
+            <p class="titulo-box"><img class="icon-food" src="https://cdn-icons-png.flaticon.com/512/2771/2771401.png"
+                alt="Logo FlowFood"><strong>Spaghetti</strong></p>
+            <p class="texto-box"><strong>Valor:</strong> R$ 45,00</p>
+            <p class="texto-box"><strong>Quantidade:</strong> 3</p>
+            <p class="texto-box"><strong>Mesa:</strong> 5</p>
+            <p class="texto-box"><strong>Descrição:</strong> Spaghetti com bacon, ovos, queijo parmesão
+              e creme de leite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content-left">
+      <h1>Flow Food</h1>
+      <p>Gestão de restaurantes</p>
+    </div>
+    <div class="footer-content-center">
+      <img src="/flowfood/projeto/imagens/flow-food-logo100.png" alt="FlowFood Logo Pequeno" class="footer-logo">
+    </div>
+    <div class="footer-content-right">
+      <p>Todos os direitos reservados ©</p>
+    </div>
+  </footer>
+
+  <!-- Link para o JavaScript -->
+  <script src="/flowfood/projeto/js/crud.js"></script>
 </body>
 
 </html>

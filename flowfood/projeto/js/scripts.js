@@ -134,24 +134,53 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function recuperarDados() {
-    // Recupera as reservas do Local Storage
     const dadosString = localStorage.getItem("dadosReserva");
     const reservas = dadosString ? JSON.parse(dadosString) : [];
 
     const divReservasAtuais = document.querySelector(".reservas-atual");
     // Cria uma lista para cada reserva
     reservas.forEach((reserva) => {
-      const listaReservasAtuais = document.querySelector(".in-reservas-atual");
+      const divInReservasAtuais = document.createElement("div");
+      divInReservasAtuais.setAttribute("class","in-reservas-atual");
 
       for (const campo in reserva) {
-        const itemListaAtual = document.createElement("p");
-        itemListaAtual.innerHTML = `<strong>${campo} </strong>: ${reserva[campo]}`;
-        itemListaAtual.setAttribute("class", "texto-box");
-        listaReservasAtuais.append(itemListaAtual);
-      }
+        if(reserva.status=='Agendada') {
+        const itemLista = document.createElement("p");
+        itemLista.setAttribute("class", "texto-box");
+        //deixando a primeira letra Maiuscula
+        itemLista.innerHTML = `<strong> ${
+          campo.charAt(0).toUpperCase() + campo.substring(1)
+        } </strong>: ${reserva[campo]}`;
 
-      divReservasAtuais.appendChild(listaReservasAtuais);
+        divInReservasAtuais.appendChild(itemLista);
+        divReservasAtuais.appendChild(divInReservasAtuais);
+      }
+    }
+    });
+  }
+
+  function recuperarPedidos() {
+    const dadosString = localStorage.getItem("dadosPedidos");
+    const pedidos = dadosString ? JSON.parse(dadosString) : [];
+  
+    const divPedidosAtuais = document.querySelector(".pedidos-atual");
+    // Cria uma lista para cada pedido
+    pedidos.forEach((pedido) => {
+      const divInPedidosAtuais = document.createElement("div");
+      divInPedidosAtuais.setAttribute("class", "in-pedidos-atual");
+  
+      for (const campo in pedido) {
+        const itemLista = document.createElement("p");
+        itemLista.setAttribute("class", "texto-box");
+        // Deixando a primeira letra Maiuscula
+        itemLista.innerHTML = `<strong>${campo.charAt(0).toUpperCase() + campo.substring(1)}</strong>: ${pedido[campo]}`;
+  
+        divInPedidosAtuais.appendChild(itemLista);
+      }
+  
+      divPedidosAtuais.appendChild(divInPedidosAtuais);
     });
   }
   recuperarDados();
+  recuperarPedidos();
 });
