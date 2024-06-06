@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="/flowfood/projeto/imagens/flow-food-favicon.ico" />
-  <link rel="stylesheet" href="/flowfood/projeto/styles/pedidos.css" />
-  <title>Flow Food - Relatórios</title>
+  <link rel="stylesheet" href="/flowfood/projeto/styles/relatorio.css" />
+  <title>Flow Food - Pedidos</title>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
           </button></a>
       </li>
       <li>
-        <a href="pedido.html"> <button class="nav-button active">
+        <a href="pedido.html"> <button class="nav-button">
             <strong>Pedidos</strong>
           </button></a>
       </li>
@@ -80,7 +80,7 @@
           </button></a>
       </li>
       <li>
-        <a href="relatorio.html"> <button class="nav-button">
+        <a href="relatorio.html"> <button class="nav-button active">
             <strong>Relatórios</strong>
           </button></a>
       </li>
@@ -88,22 +88,36 @@
   </nav>
 
   <main class="main-content">
-    <section id="pedido-content" class="pedido-section visible">
+    <section id="relatorio-content" class="relatorio-section visible">
       <div class="flexbox-content">
-        <div class="pedidos-atual">
-          <h1 class="texto-box">Pedidos</h1>
-          <div class="in-novo-pedido">
-            <form action="post" id="pedido-form">
-              <label for="input-mesa" class="label-pedido-input">Mesa:</label>
-              <input name="mesa" type="number" class="label-pedido-input" id="input-mesa"></input>
-              <label for="input-reserva" class="label-pedido-input">Pedido:</label>
-              <input name="pedido" type="text" class="label-pedido-input" id="input-pedido"></input>
-              <label for="=input-valor" class="label-pedido-input">Valor:</label>
-              <input name="valor" type="number" class="label-pedido-input" id="input-valor"></input>
-              <button id="botao-adicionar" type="button" class="botao-adicionar">Adicionar</button>
-            </form>
+        <div class="relatorios-atual">
+          <h1 class="texto-box">Relatórios</h1>
+          <div class="grafico-container">
+            <canvas id="graficoVendas"></canvas>
           </div>
-          <div class="lista-pedidos"></div>
+          <div class="resumo-financeiro">
+            <h2 class="texto-box">Resumo Financeiro</h2>
+            <p>Total de Vendas: R$ <span id="total-vendas">0.00</span></p>
+            <p>Pedidos em Aberto: <span id="pedidos-aberto">0</span></p>
+            <p>Pedidos Concluídos: <span id="pedidos-concluidos">0</span></p>
+          </div>
+          <div class="tabela-pedidos">
+            <h2 class="texto-box">Pedidos Recentes</h2>
+            <table id="tabela-pedidos">
+              <thead>
+                <tr>
+                  <th>Mesa</th>
+                  <th>Pedido</th>
+                  <th>Valor</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Linhas serão adicionadas dinamicamente -->
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
@@ -122,7 +136,8 @@
     </div>
   </footer>
 
-  <script src="/flowfood/projeto/js/pedido.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/flowfood/projeto/js/relatorio.js"></script>
   <script src="/flowfood/projeto/js/scripts.js"></script>
   <!-- Link para o JavaScript -->
 </body>

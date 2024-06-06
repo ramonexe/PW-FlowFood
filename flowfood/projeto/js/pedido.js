@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function formatarHorario(horario) {
     const data = new Date(horario);
     const dia = data.getDate().toString().padStart(2, "0");
-    const mes = (data.getMonth() + 1).toString().padStart(2, "0"); // Os meses começam do 0 em JavaScript
+    const mes = (data.getMonth() + 1).toString().padStart(2, "0");
     const ano = data.getFullYear();
     const horas = data.getHours().toString().padStart(2, "0");
     const minutos = data.getMinutes().toString().padStart(2, "0");
@@ -48,6 +48,28 @@ document.addEventListener("DOMContentLoaded", () => {
     recuperarDados();
   }
 
+  function atualizarPedido(index) {
+    const pedidoIndex = pedidos.length - 1 - index;
+    const novoPedido = prompt("Novo pedido:", pedidos[pedidoIndex].pedido);
+    const novoValor = prompt("Novo valor:", pedidos[pedidoIndex].valor);
+    const novaMesa = prompt("Nova mesa:", pedidos[pedidoIndex].mesa);
+
+    if (novoPedido && novoValor && novaMesa) {
+      pedidos[pedidoIndex].pedido = novoPedido;
+      pedidos[pedidoIndex].valor = novoValor;
+      pedidos[pedidoIndex].mesa = novaMesa;
+      localStorage.setItem("dadosPedido", JSON.stringify(pedidos));
+      recuperarDados();
+    }
+  }
+
+  function excluirPedido(index) {
+    const pedidoIndex = pedidos.length - 1 - index;
+    pedidos.splice(pedidoIndex, 1);
+    localStorage.setItem("dadosPedido", JSON.stringify(pedidos));
+    recuperarDados();
+  }
+
   function recuperarDados() {
     const divPedidos = document.querySelector(".lista-pedidos");
     divPedidos.innerHTML = '';
@@ -69,10 +91,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const botaoStatus = document.createElement("button");
       botaoStatus.textContent = "Alterar Status";
+      botaoStatus.classList.add("button-action", "button-status");
       botaoStatus.addEventListener("click", () => mudarStatus(index));
+
+      const botaoAtualizar = document.createElement("button");
+      botaoAtualizar.textContent = "Atualizar";
+      botaoAtualizar.classList.add("button-action", "button-update");
+      botaoAtualizar.addEventListener("click", () => atualizarPedido(index));
+
+      const botaoExcluir = document.createElement("button");
+      botaoExcluir.textContent = "Excluir";
+      botaoExcluir.classList.add("button-action", "button-delete");
+      botaoExcluir.addEventListener("click", () => excluirPedido(index));
 
       divInPedidos.appendChild(statusBola);
       divInPedidos.appendChild(botaoStatus);
+      divInPedidos.appendChild(botaoAtualizar);
+      divInPedidos.appendChild(botaoExcluir);
       divPedidos.appendChild(divInPedidos);
     });
   }

@@ -145,8 +145,8 @@ body {
   background-color: #e5940e;
 }
 
-.pedidos-atual {
-  flex: 1 1 50%;
+.relatorios-atual {
+  flex: 50%;
   margin: 10px;
   overflow: auto;
   padding: 10px;
@@ -156,39 +156,52 @@ body {
   background: #c8c8c8;
 }
 
-.in-pedidos {
-  flex-wrap: wrap;
-  margin: 10px;
-  height: auto;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
-.status {
-  margin-left: 10px;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.status-preparo {
-  background-color: yellow;
-}
-
-.status-pronto {
-  background-color: green;
-}
-
 .texto-box {
   margin: 10px;
   color: #000000;
+}
+
+.grafico-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.resumo-financeiro {
+  margin: 20px;
+  padding: 10px;
+  background-color: #a8a8a8;
+  border-radius: 10px;
+}
+
+.resumo-financeiro p {
+  color: #000;
+  font-size: 18px;
+}
+
+.tabela-pedidos {
+  margin: 20px;
+  padding: 10px;
+  background-color: #a8a8a8;
+  border-radius: 10px;
+}
+
+.tabela-pedidos table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-pedidos th,
+.tabela-pedidos td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+  color: #000;
+}
+
+.tabela-pedidos th {
+  background-color: #3d3c3c;
+  color: white;
 }
 
 .titulo-box {
@@ -196,95 +209,6 @@ body {
   font-weight: bold;
   margin: 10px;
   color: #000000;
-}
-.button-action {
-  margin: 10px;
-  padding: 5px 10px;
-  background-color: #bb7a10;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.button-action:hover {
-  background-color: #e5940e;
-}
-
-/* Botões de ação nos pedidos */
-.button-action {
-  margin: 5px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-/* Estilos específicos para cada botão */
-.button-status {
-  background-color: #3d3c3c;
-  color: white;
-}
-
-.button-status:hover {
-  background-color: #e5940e;
-}
-
-.button-update {
-  background-color: #3d3c3c;
-  color: white;
-}
-
-.button-update:hover {
-  background-color: #138496;
-}
-
-.button-delete {
-  background-color: #3d3c3c;
-  color: white;
-}
-
-.button-delete:hover {
-  background-color: #c82333;
-}
-
-.status,
-.button-action {
-  margin-right: 10px;
-}
-
-
-.content-section {
-  display: none;
-}
-
-.content-section.visible {
-  display: block;
-}
-
-.in-novo-pedido {
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: #3d3c3c;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.label-pedido-input {
-  border-radius: 10px;
-}
-
-.botao-adicionar {
-  border-radius: 10px;
-  background-color: #e5940e;
-  padding: 5px;
-  color: white;
-}
-
-.botao-adicionar:hover {
-  background-color: green;
 }
 
 .main-footer {

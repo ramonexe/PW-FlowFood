@@ -130,7 +130,7 @@ body {
   padding: 10px;
   background-color: #e5940e;
   border-radius: 20px 0 0 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px #000000
 }
 
 /* Flexbox Teste */
@@ -284,6 +284,7 @@ body {
   flex-direction: row;
   display: flex;
   padding: 20px;
+  opacity: 80%;
 }
 
 .footer-content-left {
@@ -386,6 +387,10 @@ body {
   }
 
   .sidebar {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
     display: none;
   }
 
