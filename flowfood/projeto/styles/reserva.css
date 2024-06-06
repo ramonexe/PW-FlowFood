@@ -4,7 +4,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1e1e1e;
   color: white;
-  background-image: url(imagens/background-pattern.jpg);
+  background-image: url(/flowfood/projeto/imagens/background-pattern.jpg);
   background-size: cover;
 }
 
@@ -144,11 +144,11 @@ body {
   padding: 0px;
   background-color: #e5940e;
 }
-.in-nova-reserva input{
+.in-nova-reserva input {
   border-radius: 8px;
   border: none;
 }
-.reservas-atual {
+.nova-reserva {
   flex: 1 1 43%;
   margin: 10px;
   width: 100%;
@@ -156,34 +156,19 @@ body {
   border-radius: 10px;
   background: #c8c8c8;
 }
-
-.in-receita-atual {
+.in-nova-reserva {
   margin: 10px;
-  min-height: 85px;
+  min-height: 190px;
+  flex-shrink: 0;
   border-radius: 10px;
   background: #a8a8a8;
 }
 
-.quantia-receita-atual {
-  font-size: 65px;
-  font-weight: bold;
-  margin: 10px;
-  color: #000000;
-}
 .label-reserva-input {
   font-size: 16px;
   font-weight: bold;
   margin: 10px;
   color: #000000;
-}
-
-.estoque-atual {
-  flex: 1 1 53%;
-  margin: 10px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background: #c8c8c8;
 }
 
 .flexbox-reserva {
@@ -193,38 +178,17 @@ body {
   justify-content: 10px;
   padding: 10px;
 }
-
-.in-estoque-atual {
-  flex: 1 1 45%;
-  flex-wrap: wrap;
-  margin: 5px;
-  width: 100%;
-  min-height: 80px;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
-.pedidos-atual {
-  flex: 1 1 50%;
-  flex-wrap: wrap;
+.quantia-reservas {
+  font-size: 65px;
+  font-weight: bold;
   margin: 10px;
-  overflow: auto;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background: #c8c8c8;
+  color: #000000;
 }
 
-.in-pedidos {
-  flex-wrap: wrap;
-  margin: 10px;
-  height: auto;
-  width: 96%;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
-.div-reservas {
+.reserva-agendada,
+.reserva-confirmada,
+.reserva-concluida,
+.reserva-cancelada {
   flex: 1 1 40%;
   margin: 10px;
   overflow: auto;
@@ -242,20 +206,37 @@ body {
   border-radius: 10px;
   background: #a8a8a8;
   padding: 10px;
+  width: 90%;
 }
-.in-nova-reserva {
-  margin: 10px;
-  min-height: 190px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #a8a8a8;
+
+#botao-adicionar {
+  background-color: #3d3c3c;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 8em;
+  border-radius: 1rem;
+  color: #eecc0f;
+  box-shadow: 0 0.4rem #2e2d2d;
+  cursor: pointer;
 }
-.nova-reserva {
-  margin: 10px;
-  min-height: 85px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #a8a8a8;
+
+#botao-adicionar :active {
+  color: #3d3c3c;
+  box-shadow: 0 0.2rem #dfd9d9;
+  transform: translateY(0.2rem);
+}
+
+#botao-adicionar:hover:not(:disabled) {
+  background: #eecc0f;
+  color: #3d3c3c;
+  font-weight: bold;
+  text-shadow: 0 0.1rem #bcb4b4;
+}
+
+#botao-adicionar:disabled {
+  cursor: auto;
+  color: grey;
 }
 
 .texto-box {
@@ -280,36 +261,6 @@ body {
   background: #c8c8c8;
 }
 
-.flexbox-tabela {
-  flex-direction: column;
-  display: flex;
-  justify-content: 10px;
-  padding: 10px;
-  background-color: #e5940e;
-}
-
-.table-estoque {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-estoque th,
-.table-estoque td {
-  padding: 10px;
-  border: 1px solid #000000;
-  text-align: center;
-}
-
-.table-estoque th {
-  background-color: #8d8d8d;
-  color: white;
-}
-
-.table-estoque td {
-  background-color: white;
-  color: black;
-}
-
 .button-action {
   margin: 10px;
   padding: 5px 10px;
@@ -323,26 +274,6 @@ body {
 
 .button-action:hover {
   background-color: #e5940e;
-}
-
-.item-form {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.in-estoque {
-  margin: 10px;
-  min-height: 60px;
-  border-radius: 10px;
-  background: #a8a8a8;
-}
-
-.reserva-section {
-  display: none;
-}
-
-.reserva-section.visible {
-  display: block;
 }
 
 .main-footer {
@@ -379,11 +310,6 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-}
-
-.icon-food {
-  width: 50px;
-  height: 50px;
 }
 
 ::-webkit-scrollbar {
@@ -436,17 +362,6 @@ body {
 
   .flexbox-teste {
     flex-direction: column;
-  }
-
-  .receita-atual,
-  .estoque-atual,
-  .pedidos-atual,
-  .reservas-atual,
-  .in-pedidos,
-  .in-reservas,
-  .estoque {
-    width: 100%;
-    height: auto;
   }
 }
 
