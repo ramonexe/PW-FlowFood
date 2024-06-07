@@ -165,10 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ? JSON.parse(transactionsString)
       : [];
     const despesas = transactions.filter(
-      (transaction) => transaction.type === "despesa" && transaction.status === "Pendente"
+      (transaction) =>
+        transaction.type === "despesa" && transaction.status === "Pendente"
     );
     const receitas = transactions.filter(
-      (transaction) => transaction.type === "receita" && transaction.status === "Pago"
+      (transaction) =>
+        transaction.type === "receita" && transaction.status === "Pago"
     );
     const totalDespesas = despesas.reduce(
       (total, despesa) => total + despesa.value,
@@ -208,8 +210,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+  function recuperarEstoque() {
+    const items = JSON.parse(localStorage.getItem("estoque")) || [];
+    const divEstoqueAtual = document.querySelector(".estoque-atual");
+
+    items.forEach((item) => {
+      const divItem = document.createElement("div");
+      divItem.setAttribute("class", "in-estoque-atual");
+      const itemLista = document.createElement("p");
+      itemLista.setAttribute("class", "texto-box");
+      itemLista.innerHTML = `<strong>Item:</strong> ${item.name} <br> <strong>Quantidade:</strong> ${item.quantity} <br> <strong>Nível crítico:  ${item.nivel}`;
+      divItem.appendChild(itemLista); // Adicione o itemLista ao divItem
+      divEstoqueAtual.appendChild(divItem); // Adicione o divItem ao divEstoqueAtual
+    });
+  }
+
   recuperarDados();
   recuperarPedidos();
   calculaSaldo();
+  recuperarEstoque();
 });
