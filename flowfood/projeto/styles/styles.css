@@ -177,7 +177,6 @@ body {
 .estoque-atual {
   flex: 1 1 53%;
   margin: 10px;
-  width: 100%;
   height: auto;
   border-radius: 10px;
   background: #c8c8c8;
@@ -207,7 +206,7 @@ body {
   margin: 10px;
   overflow: auto;
   padding: 10px;
-  width: 100%;
+ 
   height: auto;
   border-radius: 10px;
   background: #c8c8c8;
@@ -230,7 +229,6 @@ body {
   flex: 1 1 40%;
   margin: 10px;
   overflow: auto;
-  width: 100%;
   height: auto;
   border-radius: 10px;
   background: #c8c8c8;

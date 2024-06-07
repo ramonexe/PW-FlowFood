@@ -141,46 +141,75 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cria uma lista para cada reserva
     reservas.forEach((reserva) => {
       const divInReservasAtuais = document.createElement("div");
-      divInReservasAtuais.setAttribute("class","in-reservas-atual");
+      divInReservasAtuais.setAttribute("class", "in-reservas-atual");
 
       for (const campo in reserva) {
-        if(reserva.status=='Agendada') {
-        const itemLista = document.createElement("p");
-        itemLista.setAttribute("class", "texto-box");
-        //deixando a primeira letra Maiuscula
-        itemLista.innerHTML = `<strong> ${
-          campo.charAt(0).toUpperCase() + campo.substring(1)
-        } </strong>: ${reserva[campo]}`;
+        if (reserva.status == "Agendada") {
+          const itemLista = document.createElement("p");
+          itemLista.setAttribute("class", "texto-box");
+          //deixando a primeira letra Maiuscula
+          itemLista.innerHTML = `<strong> ${
+            campo.charAt(0).toUpperCase() + campo.substring(1)
+          } </strong>: ${reserva[campo]}`;
 
-        divInReservasAtuais.appendChild(itemLista);
-        divReservasAtuais.appendChild(divInReservasAtuais);
+          divInReservasAtuais.appendChild(itemLista);
+          divReservasAtuais.appendChild(divInReservasAtuais);
+        }
       }
-    }
     });
   }
 
+  function calculaSaldo() {
+    const transactionsString = localStorage.getItem("transactions");
+    const transactions = transactionsString
+      ? JSON.parse(transactionsString)
+      : [];
+    const despesas = transactions.filter(
+      (transaction) => transaction.type === "despesa"
+    );
+    const receitas = transactions.filter(
+      (transaction) => transaction.type === "receita"
+    );
+    const totalDespesas = despesas.reduce(
+      (total, despesa) => total + despesa.value,
+      0
+    );
+    const totalReceitas = receitas.reduce(
+      (total, receita) => total + receita.value,
+      0
+    );
+    const saldo = totalReceitas - totalDespesas;
+    const pSaldo = document.querySelector(".quantia-receita-atual");
+    pSaldo.textContent = `R$ ${saldo.toFixed(2)}`;
+  }
+
   function recuperarPedidos() {
-    const dadosString = localStorage.getItem("dadosPedidos");
+    const dadosString = localStorage.getItem("dadosPedido");
     const pedidos = dadosString ? JSON.parse(dadosString) : [];
-  
+
     const divPedidosAtuais = document.querySelector(".pedidos-atual");
     // Cria uma lista para cada pedido
     pedidos.forEach((pedido) => {
       const divInPedidosAtuais = document.createElement("div");
-      divInPedidosAtuais.setAttribute("class", "in-pedidos-atual");
-  
+      divInPedidosAtuais.setAttribute("class", "in-pedidos");
+
       for (const campo in pedido) {
         const itemLista = document.createElement("p");
         itemLista.setAttribute("class", "texto-box");
         // Deixando a primeira letra Maiuscula
-        itemLista.innerHTML = `<strong>${campo.charAt(0).toUpperCase() + campo.substring(1)}</strong>: ${pedido[campo]}`;
-  
+        itemLista.innerHTML = `<strong>${
+          campo.charAt(0).toUpperCase() + campo.substring(1)
+        }</strong>: ${pedido[campo]}`;
+
         divInPedidosAtuais.appendChild(itemLista);
       }
-  
+
       divPedidosAtuais.appendChild(divInPedidosAtuais);
     });
   }
+
+  
   recuperarDados();
   recuperarPedidos();
+  calculaSaldo();
 });
