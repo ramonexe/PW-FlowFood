@@ -130,7 +130,7 @@ body {
   padding: 10px;
   background-color: #e5940e;
   border-radius: 20px 0 0 20px;
-  box-shadow: 0 0 20px #000000
+  box-shadow: 0 0 20px #000000;
 }
 
 /* Flexbox Teste */
@@ -149,10 +149,10 @@ body {
   border: none;
 }
 .nova-reserva {
-  flex: 1 1 43%;
+  flex: 1 1 40%;
   margin: 10px;
-  width: 100%;
-  height: auto;
+  width: 90%;
+  min-height: 340px;
   border-radius: 10px;
   background: #c8c8c8;
 }
@@ -162,10 +162,11 @@ body {
   flex-shrink: 0;
   border-radius: 10px;
   background: #a8a8a8;
+  width: 95%;
 }
 
 .label-reserva-input {
-  font-size: 16px;
+  font-size: 23px;
   font-weight: bold;
   margin: 10px;
   color: #000000;
@@ -178,8 +179,12 @@ body {
   justify-content: 10px;
   padding: 10px;
 }
-.quantia-reservas {
-  font-size: 65px;
+#quantia-reservas-agendadas,
+#quantia-reservas-confirmadas,
+#quantia-reservas-concluidas,
+#quantia-reservas-canceladas,
+#quantia-reservas-total {
+  font-size: 30px;
   font-weight: bold;
   margin: 10px;
   color: #000000;
@@ -188,77 +193,85 @@ body {
 .reserva-agendada,
 .reserva-confirmada,
 .reserva-concluida,
-.reserva-cancelada {
+.reserva-cancelada,
+.total-reservas {
   flex: 1 1 40%;
   margin: 10px;
-  overflow: auto;
+  overflow: hidden;
   width: 100%;
-  max-height: 490px;
+  min-height: 340px;
+  max-height: 550px;
   border-radius: 10px;
   background: #c8c8c8;
-  padding-top: 10px;
+}
+
+.reservas-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  min-height: 340px;
+  max-height: 500px;
+}
+.total-reservas {
+  max-height: 340px;
+  text-align: center;
+}
+.total-reservas .reservas-container {
+  padding-top: 20px;
+  max-height: 120px;
 }
 
 .in-reservas {
+  overflow-y: auto;
   margin: 10px;
-  overflow: auto;
+  width: calc(50% - 50px);
   height: auto;
   border-radius: 10px;
   background: #a8a8a8;
   padding: 10px;
-  width: 90%;
 }
 
+#botao-editar,
+#botao-atualizar,
 #botao-adicionar {
-  background-color: #3d3c3c;
-  border: none;
-  padding: 1rem;
-  font-size: 1rem;
-  width: 8em;
-  border-radius: 1rem;
-  color: #eecc0f;
-  box-shadow: 0 0.4rem #2e2d2d;
+  background: #fbca1f;
+  padding: 0.2em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
   cursor: pointer;
+  margin: 0.8em 0.9em;
 }
 
-#botao-adicionar :active {
-  color: #3d3c3c;
-  box-shadow: 0 0.2rem #dfd9d9;
-  transform: translateY(0.2rem);
+#botao-editar:active,
+#botao-atualizar:active,
+#botao-adicionar:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }
-
-#botao-adicionar:hover:not(:disabled) {
-  background: #eecc0f;
-  color: #3d3c3c;
-  font-weight: bold;
-  text-shadow: 0 0.1rem #bcb4b4;
-}
-
-#botao-adicionar:disabled {
-  cursor: auto;
-  color: grey;
+#botao-editar:hover,
+#botao-atualizar:hover,
+#botao-adicionar:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
 }
 
 .texto-box {
   margin: 10px;
   color: #000000;
+  font-size: 24px;
 }
 
 .titulo-box {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   font-size: 30px;
   font-weight: bold;
   margin: 10px;
   color: #000000;
-}
-
-.estoque {
-  text-align: center;
-  margin: 10px;
-  overflow: auto;
-  min-width: 100%;
-  min-height: 750px;
-  border-radius: 10px;
-  background: #c8c8c8;
 }
 
 .button-action {
@@ -367,17 +380,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .quantia-receita-atual {
-    font-size: 45px;
-  }
-
   .titulo-box {
     font-size: 24px;
-  }
-
-  .table-estoque th,
-  .table-estoque td {
-    padding: 5px;
   }
 }
 

@@ -97,8 +97,8 @@
           <div class="nova-reserva">
             <h1 class="texto-box">Nova Reserva</h1>
             <div class="in-nova-reserva">
-              <form action="javascript: gravarDados()" id="reserva-form">
-                <label for="input-reserva" class="label-reserva-input"
+              <form  id="reserva-form">
+                <label for="input-cliente" class="label-reserva-input"
                   >Cliente:</label
                 >
                 <input
@@ -118,7 +118,7 @@
                   id="input-mesa"
                   required
                 /><br />
-                <label for="=input-qtd" class="label-reserva-input"
+                <label for="input-qtd" class="label-reserva-input"
                   >Qtd pessoas:</label
                 >
                 <input
@@ -144,26 +144,36 @@
           </div>
           <div class="reserva-confirmada">
             <h1 class="titulo-box">Reservas Confirmadas</h1>
+            <div class="reservas-container">
+
+            </div>
           </div>
           <div class="reserva-agendada">
             <h1 class="titulo-box">Reservas Agendadas</h1>
+            <div class="reservas-container"></div>
           </div>
           <div class="reserva-concluida">
             <h1 class="titulo-box">Reservas Concluídas</h1>
+            <div class="reservas-container"></div>
           </div>
           <div class="reserva-cancelada">
             <h1 class="titulo-box">Reservas Canceladas</h1>
+            <div class="reservas-container"></div>
           </div>
-          <div class="reserva-cancelada">
+          <div class="total-reservas">
             <h1 class="titulo-box">Total de reservas:</h1>
-            <p class="quantia-reservas">345</p>
+            <div class="reservas-container">
             <h1 class="texto-box">Agendadas:</h1>
-            <p class="quantia-reservas">345</p>
+            <p id="quantia-reservas-agendadas"></p>
             <h1 class="texto-box">Confirmadas:</h1>
-            <p class="quantia-reservas">345</p>
+            <p id="quantia-reservas-confirmadas"></p>
             <h1 class="texto-box">Concluídas:</h1>
-            <p class="quantia-reservas">345</p>
+            <p id="quantia-reservas-concluidas"></p>
             <h1 class="texto-box">Canceladas:</h1>
+            <p id="quantia-reservas-canceladas"></p>
+            <h1 class="titulo-box">Total:</h1>
+            <p id="quantia-reservas-total"></p>
+          </div>
           </div>
         </div>
       </section>
@@ -189,5 +199,6 @@
     <!-- Link para o JavaScript -->
     <script src="/flowfood/projeto/js/scripts.js"></script>
     <script src="/flowfood/projeto/js/reserva.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   </body>
 </html>
