@@ -165,10 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ? JSON.parse(transactionsString)
       : [];
     const despesas = transactions.filter(
-      (transaction) => transaction.type === "despesa"
+      (transaction) => transaction.type === "despesa" && transaction.status === "Pendente"
     );
     const receitas = transactions.filter(
-      (transaction) => transaction.type === "receita"
+      (transaction) => transaction.type === "receita" && transaction.status === "Pago"
     );
     const totalDespesas = despesas.reduce(
       (total, despesa) => total + despesa.value,
