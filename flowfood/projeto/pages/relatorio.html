@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="/flowfood/projeto/imagens/flow-food-favicon.ico" />
   <link rel="stylesheet" href="/flowfood/projeto/styles/relatorio.css" />
-  <title>Flow Food - Pedidos</title>
+  <title>Flow Food - Relatórios</title>
 </head>
 
 <body>
@@ -23,11 +23,6 @@
               </button></a>
           </li>
           <li>
-            <a href="financeiro.html"> <button class="nav-button">
-                <strong>Financeiro</strong>
-              </button></a>
-          </li>
-          <li>
             <a href="pedido.html"> <button class="nav-button">
                 <strong>Pedidos</strong>
               </button></a>
@@ -38,9 +33,9 @@
               </button></a>
           </li>
           <li>
-            <a href="estoque.html"> <button class="nav-button">
-                <strong>Estoques</strong>
-              </button></a>
+            <a href="index.html"> <button class="nav-button" data-target="stock">
+              <strong>Estoque</strong>
+            </button></a>
           </li>
           <li>
             <a href="relatorio.html"> <button class="nav-button">
@@ -60,11 +55,6 @@
           </button></a>
       </li>
       <li>
-        <a href="financeiro.html"> <button class="nav-button">
-            <strong>Financeiros</strong>
-          </button></a>
-      </li>
-      <li>
         <a href="pedido.html"> <button class="nav-button">
             <strong>Pedidos</strong>
           </button></a>
@@ -75,9 +65,9 @@
           </button></a>
       </li>
       <li>
-        <a href="estoque.html"> <button class="nav-button">
-            <strong>Estoques</strong>
-          </button></a>
+        <a href="index.html"> <button class="nav-button" data-target="stock">
+          <strong>Estoque</strong>
+        </button></a>
       </li>
       <li>
         <a href="relatorio.html"> <button class="nav-button active">
@@ -91,7 +81,7 @@
     <section id="relatorio-content" class="relatorio-section visible">
       <div class="flexbox-content">
         <div class="relatorios-atual">
-          <h1 class="texto-box">Relatórios</h1>
+          <h1 class="texto-box">RELATÓRIOS E FINANÇAS</h1>
           <div class="grafico-container">
             <canvas id="graficoVendas"></canvas>
           </div>
@@ -118,6 +108,31 @@
               </tbody>
             </table>
           </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="transactions-section" class="transaction-section">
+      <div class="tabela-transactions">
+      <h1 class="texto-box">Registro de Transações Financeiras</h1>
+      <form id="transaction-form">
+        <label for="transaction-type">Tipo de Transação:</label>
+        <select id="transaction-type" name="transaction-type">
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+        <label for="transaction-description">Descrição:</label>
+        <input type="text" id="transaction-description" name="transaction-description">
+        <label for="transaction-value">Valor (R$):</label>
+        <input type="number" id="transaction-value" name="transaction-value" step="0.01">
+        <label for="transaction-date">Data:</label>
+        <input type="date" id="transaction-date" name="transaction-date">
+        <button type="submit">Registrar Transação</button>
+        <p>Total de Receitas: R$ <span id="total-receita">0.00</span></p>
+        <p>Total de Despesas: R$ <span id="total-despesa">0.00</span></p>
+        <button id="clear-transactions-button" class="limpar-transactions">Limpar Transações</button>
+        <div id="transactions-list" class="transactions-list">
+          <!-- Transações serão carregadas dinamicamente -->
         </div>
       </div>
     </section>

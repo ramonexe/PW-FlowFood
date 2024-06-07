@@ -211,6 +211,104 @@ body {
   color: #000000;
 }
 
+.transaction-section {
+  flex: 50%;
+  margin: 10px;
+  overflow: auto;
+  padding: 10px;
+  height: auto;
+  border-radius: 10px;
+  background: #c8c8c8;
+}
+
+.transactions-list {
+  max-height: 600px; /* Altura máxima para scroll se necessário */
+  overflow-y: auto; /* Adiciona scroll vertical se necessário */
+}
+
+.transaction {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  color: #333;
+}
+
+.transaction-type {
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-description {
+  margin-top: 5px;
+  color: #333;
+}
+
+.transaction-value {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.transaction-date {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.toggle-status-button {
+  background-color: #3d3c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-status-button:hover {
+  background-color: #e5940e;
+}
+
+.status-pago {
+  background-color: #59FA84; /* Verde para transações pagas */
+}
+
+.status-pendente {
+  background-color: #F8D015; /* Amarelo para transações pendentes */
+}
+
+.tabela-transactions {
+  margin: 20px;
+  padding: 10px;
+  background-color: #a8a8a8;
+  border-radius: 10px;
+}
+
+.limpar-transactions {
+  background-color: #e5940e;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px;
+  margin-left: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.limpar-transactions:hover {
+  background-color: #a76b0b;
+}
+
+.receita {
+  color: green; /* Define a cor verde para transações de receita */
+}
+
+.receita .toggle-status-button {
+  display: none; /* Esconde o botão de alterar status para transações de receita */
+}
+
 .main-footer {
   justify-content: space-between;
   margin-top: 40px;

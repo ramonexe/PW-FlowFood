@@ -234,28 +234,32 @@ body {
 #botao-editar,
 #botao-atualizar,
 #botao-adicionar {
-  background: #fbca1f;
-  padding: 0.2em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
+  background: #3d3c3c;
+  color: white;
+  padding: 5px 10px;
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
   cursor: pointer;
   margin: 0.8em 0.9em;
+  transition: background-color 0.3s;
 }
 
 #botao-editar:active,
 #botao-atualizar:active,
 #botao-adicionar:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
 }
-#botao-editar:hover,
-#botao-atualizar:hover,
+
+#botao-editar:hover {
+  transform: translate(-0.05em, -0.05em);
+  background-color: #138496;
+}
+#botao-atualizar:hover {
+  transform: translate(-0.05em, -0.05em);
+  background-color: #e5940e;
+}
 #botao-adicionar:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  background-color: #e5940e;
 }
 
 .texto-box {
@@ -286,7 +290,7 @@ body {
 }
 
 .button-action:hover {
-  background-color: #e5940e;
+  background-color: #bb7a10;
 }
 
 .main-footer {
